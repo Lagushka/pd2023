@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Input, message } from 'antd';
+import { Button, Input, Skeleton, message } from 'antd';
 import { EnterOutlined } from '@ant-design/icons';
 import { PageContainer } from '@/widgets/page-container/PageContainer';
 
@@ -25,7 +25,7 @@ export default function Home() {
     setTimeout(() => {
       setAnswerDone(true);
       setHasLoading(false);
-    }, 1000);
+    }, 2500);
   };
 
   return (
@@ -34,13 +34,17 @@ export default function Home() {
       <div className={classes.main}>
         <Input size="large" placeholder='Введите запрос' />
         <Button size="large" type='primary' icon={<EnterOutlined />} onClick={clickHandler} loading={hasLoading}>Отправить</Button>
+        {
+          answerDone &&
+          <p className={classes.answer}>
+            Крутой ответ. Длина 5см, например. (На самом деле это мок, и никакого запроса не было)
+          </p>
+        }
+        {
+          hasLoading &&
+          <Skeleton paragraph={{ rows: 3 }} />
+        }
       </div>
-      {
-        answerDone &&
-        <p className={classes.answer}>
-          Крутой ответ. Длина 5с. (На самом деле это мок, и никакого запроса не было)
-        </p>
-      }
     </PageContainer>
   )
 }
