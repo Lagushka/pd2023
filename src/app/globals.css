@@ -1,0 +1,9 @@
+body {
+  --header-height: 60px;
+  --main-background-color: linear-gradient(90deg, rgba(255,211,246,1) 0%, rgba(193,244,255,1) 100%);
+  --secondary-background-color: white;
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}

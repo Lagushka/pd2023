@@ -1,0 +1,23 @@
+.header {
+    width: 100%;
+    height: var(--header-height);
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--secondary-background-color);
+    box-shadow: 0 8px 6px -6px #0000001f;
+}
+
+.logo {
+    color: black;
+    text-decoration: none;
+}
+
+.logo:visited {
+    color: black;
+    text-decoration: none;
+}
